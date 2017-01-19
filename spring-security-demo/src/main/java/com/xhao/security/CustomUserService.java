@@ -19,10 +19,10 @@ public class CustomUserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         Operator operator = operatorDao.getByAccount(s);
-        SecurityUser user = new SecurityUser(operator);
-        if(user == null){
+        if(operator == null){
             throw new UsernameNotFoundException("用户名不存在");
         }
+        SecurityUser user = new SecurityUser(operator);
         return user;
     }
 }

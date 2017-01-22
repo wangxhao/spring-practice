@@ -10,5 +10,5 @@ public interface UserDao {
 
     User getByAccount(String account);
 
-    User insert(User user);
+    void insert(User user);
 }

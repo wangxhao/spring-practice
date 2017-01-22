@@ -14,12 +14,12 @@
     </select>
 
     <insert id="insert" parameterType="User">
-        <selectKey keyProperty="keyId" resultType="int" order="BEFORE">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
             select f_cm_getmsseq from dual
         </selectKey>
         insert into t_sys_user (<include refid="UserResult"/>)
         values (
-            ${keyId},
+            #{id},
             #{account},
             #{username,jdbcType=VARCHAR},
             #{password}

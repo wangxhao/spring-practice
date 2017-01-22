@@ -19,7 +19,7 @@ public class UserService {
         return userDao.getByAccount(account);
     }
 
-    public User insert(User user){
-        return userDao.insert(user);
+    public void insert(User user){
+        userDao.insert(user);
     }
 }

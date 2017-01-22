@@ -27,7 +27,7 @@ public class UserController {
     @RequestMapping(value = "register", method = RequestMethod.POST)
     @ResponseBody
     public User register(User user){
-        user = userService.insert(user);
+        userService.insert(user);
         return user;
     }
 
